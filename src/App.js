@@ -1,6 +1,7 @@
 import { TabMenu } from 'primereact/tabmenu';
 import { Card } from 'primereact/card';
 import { Image } from 'primereact/image';
+import { Button } from 'primereact/button';
 import './App.css';
 
 const App = () => {
@@ -14,6 +15,10 @@ const App = () => {
     {label: 'Habilidades de programación', icon: 'pi pi-fw pi-tags'},
     {label: 'Contacto', icon: 'pi pi-fw pi-inbox'}
   ];
+
+  const sendEmail = () => {
+    window.open("mailto:josebasrd@gmail.com?subject=SendMail&body=Description")
+  }
 
   return (
     <div className="App">
@@ -40,7 +45,7 @@ const App = () => {
       </Card>
       <Card itemID='contact'>
         <h2>Contacto</h2>
-        
+        <Button onClick={sendEmail} label='Enviar correo'></Button>
       </Card>
     </div>
   );
